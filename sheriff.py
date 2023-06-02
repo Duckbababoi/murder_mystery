@@ -1,3 +1,5 @@
+import variables
+import game
 def SheriffActions(): #действия игрока в роли шерифа
   name_sher = input(
     'You think you know who is a musderer? Then shoot him. Type a name')
@@ -5,11 +7,11 @@ def SheriffActions(): #действия игрока в роли шерифа
   question = input('Do you want to team up with someone? Yes or no?')
   if question.capitalize == 'Yes':
     question2 = input('Who would u like to team up with?')
-    ShowPlayers()
+    game.ShowPlayers()
 
   def TeamUp():
-    if IsPlayerInList(question2):
-      if IsSmbDead != False:
+    if game.IsPlayerInList(question2):
+      if variables.IsSmbDead != False:
         print("Your team up with", question2)
       else:
         print("Your can not team up because somebody is dead")
