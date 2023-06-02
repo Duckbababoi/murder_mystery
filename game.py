@@ -63,3 +63,9 @@ def IsPlayerInList(name):#проверка если есть такой игро
     if name.capitalize() == i:
       return True
   return False
+
+def EnterPlayers():
+  stop=input('type stop to stop getting list of names')
+  while stop!='stop':
+    for i in Roles:
+      print (i)

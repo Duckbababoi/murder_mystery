@@ -41,11 +41,7 @@ def BotMurdererActions():#действия убийцы, только убийц
   # на примере MurdererActions написать функцию для невиновного
 
 
-def EnterPlayers():
-  stop=input('type stop to stop getting list of names')
-  while stop!='stop':
-    for i in Roles:
-      print (i)
+
   # нужно чтобы в список l бесконечно вводили игроков пока не напишут какое-то стоп-слово
 
 
