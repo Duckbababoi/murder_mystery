@@ -1,3 +1,4 @@
+import random
 import game
 import innocent
 import murderer
@@ -21,15 +22,7 @@ IsSmbDead = False
     # попросить пользователя ввести имя еще раз до момента пока он не введет его правильно
 
 
-def BotMurdererActions():#действия убийцы, только убийца бот а у игрока другая роль
-  global IsSmbDead
-  chance = random.randind(0, 1)
-  if chance:
-    death = random.choice(Roles)
-    Roles.pop(death)
-    IsSmbDead = True
-  else:
-    IsSmbDead = False
+
 
 
 # на примере BotMurdererActions написать функцию для шерифа-бота
