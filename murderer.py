@@ -1,7 +1,9 @@
 import random
 import variables
 import game
-def MurdererActions():# тут все дейтвия убийцы
+
+
+def MurdererActions():  # тут все дейтвия убийцы
   name = input("Type name of your victim:")
   if game.IsPlayerInList():
     if game.IsKillSuccessful():
@@ -12,7 +14,9 @@ def MurdererActions():# тут все дейтвия убийцы
   else:
     pass
 
-def BotMurdererActions():#действия убийцы, только убийца бот а у игрока другая роль
+
+def BotMurdererActions(
+):  #действия убийцы, только убийца бот а у игрока другая роль
   global IsSmbDead
   chance = random.randind(0, 1)
   if chance:

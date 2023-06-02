@@ -1,20 +1,24 @@
 import random
 import variables
 
-def StartGame():#вступление игры
+
+def StartGame():  #вступление игры
   intro = 'welcome to murder mystery'
   print(f"{intro:^65}")
   input('press any key to start')
+
 
 def AddRole():
   for i, j in variables.Roles.items():
     if isinstance(j, (int, float)):
       variables.Roles[i] = GenerateRole()
 
+
 def GenerateRole(choose: list):
   pass
 
-def PlayerRole(): #случайная роль игрока
+
+def PlayerRole():  #случайная роль игрока
   global role
   choose = random.randint(1, 3)
   if choose == 1:
@@ -40,32 +44,40 @@ def PlayerRole(): #случайная роль игрока
     role = 3
   ShowPlayers()
 
-def KillPlayer(index):#убирает из списка игрока которого убили
+
+def KillPlayer(index):  #убирает из списка игрока которого убили
   variables.Roles.pop(index)
 
-def ShowPlayers():#показывает список игроков
+
+def ShowPlayers():  #показывает список игроков
   for i, j in variables.Roles:
     print(j)
 
-def KillProcess(index):#прецесс убийства где и убирается из списка мертвый персонаж и выводится список игроков
+
+def KillProcess(
+  index
+):  #прецесс убийства где и убирается из списка мертвый персонаж и выводится список игроков
   KillPlayer(index)
   print('People left:')
   ShowPlayers()
 
-def IsKillSuccessful(): #проверка если убийство было удачным
+
+def IsKillSuccessful():  #проверка если убийство было удачным
   if random.randint(0, 100) % 2 == 0:
     return True
   else:
     return False
 
-def IsPlayerInList(name):#проверка если есть такой игрок в списке
+
+def IsPlayerInList(name):  #проверка если есть такой игрок в списке
   for i in variables.Roles:
     if name.capitalize() == i:
       return True
   return False
 
+
 def EnterPlayers():
-  stop=input('type stop to stop getting list of names')
-  while stop!='stop':
+  stop = input('type stop to stop getting list of names')
+  while stop != 'stop':
     for i in variables.Roles:
-      print (i)
+      print(i)

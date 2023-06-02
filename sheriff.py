@@ -1,6 +1,8 @@
 import variables
 import game
-def SheriffActions(): #действия игрока в роли шерифа
+
+
+def SheriffActions():  #действия игрока в роли шерифа
   name_sher = input(
     'You think you know who is a musderer? Then shoot him. Type a name')
   # после вопроса шерифа знает ли он кто убийца сделать какие-то действия
