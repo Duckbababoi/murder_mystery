@@ -28,18 +28,18 @@ def PlayerRole():  #случайная роль игрока
     print('You are sheriff, find and shoot the murderer')
     role = 2
     variables.Roles = {
-      'Innocent': 'Bob',
-      'Innocent2': 'Sarah',
-      'Murderer': 'Emily',
-      'Innocent3': 'Jack'
+      'inn2': 'Bob',
+      'inn1': 'Sarah',
+      'murd': 'Emily',
+      'inn3': 'Jack'
     }
   if choose == 3:
     print('You are murderer, kill all the people. Who is your first victim?')
     variables.Roles = {
-      'Innocent': 'Bob',
-      'Innocent2': 'Sarah',
-      'Sheriff': 'Emily',
-      'Innocent3': 'Jack'
+      'inn2': 'Bob',
+      'inn1': 'Sarah',
+      'sheriff': 'Emily',
+      'inn3': 'Jack'
     }
     role = 3
   ShowPlayers()
@@ -81,3 +81,8 @@ def EnterPlayers():
   while stop != 'stop':
     for i in variables.Roles:
       print(i)
+
+def Sheriff_win():
+  win='Good job sheriff!'
+  print(f"{win:^65}")
+  quit
