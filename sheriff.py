@@ -41,10 +41,10 @@ def BotSheriff():
   bot_teamup=random.rendint(1,4)
   if instant_shot==1:
     if instant_person==1:
-      print('You hear a shot, but game is not over yet. Sheriff made a mistake') 
+      print(variables.Replics['ms']) 
       variables.Roles.pop('inn2')
     elif instant_person==2:
-      print('You hear a shot, but game is not over yet. Sheriff made a mistake') 
+      print(variables.Replics['ms']) 
       variables.Roles.pop('inn1')
     elif instant_person==4:
       print('You hear a shot, the game is over, sheriif has shot the murderer')
