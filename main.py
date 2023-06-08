@@ -6,7 +6,7 @@ import variables
 
 def InitialGame():
   game.StartGame()
-  #game.EnterPlayers()
+  game.EnterPlayers()
   game.ShowPlayers()
   game.PlayerRole()
   if variables.role == 2:

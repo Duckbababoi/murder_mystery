@@ -62,8 +62,8 @@ def IsPlayerInList(name):  #проверка если есть такой игр
 def EnterPlayers():
   stop = input('type stop to stop getting list of names')
   while stop != 'stop':
-    for i in variables.Roles:
-      variables.Roles[stop] = 0
+    variables.Roles[stop] = 0
+    stop = input('type stop to stop getting list of names')
 
 def Sheriff_win():
   win='Good job sheriff!'
