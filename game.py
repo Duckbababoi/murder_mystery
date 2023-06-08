@@ -7,42 +7,24 @@ def StartGame():  #вступление игры
   print(f"{intro:^65}")
   input('press any key to start')
 
+def PlayerRole():
+  global role
+  role = random.randint(1,3)
 
-def AddRole():
+def AddRoles():
+  global Roles
   for i, j in variables.Roles.items():
     if isinstance(j, (int, float)):
       variables.Roles[i] = GenerateRole()
 
 
-def GenerateRole(choose: list):
-  pass
+def GenerateRole():
+  global roles_to_choose
+  role = random.choice(variables.roles_to_choose)
+  if role != "Innocent":
+    variables.roles_to_choose.pop(variables.roles_to_choose.index(role))
+  return role
 
-
-def PlayerRole():  #случайная роль игрока
-  global role
-  choose = random.randint(1, 3)
-  if choose == 1:
-    print('You are innocent, survive the mass murder')
-    role = 1
-  if choose == 2:
-    print('You are sheriff, find and shoot the murderer')
-    role = 2
-    variables.Roles = {
-      'inn2': 'Bob',
-      'inn1': 'Sarah',
-      'murd': 'Emily',
-      'inn3': 'Jack'
-    }
-  if choose == 3:
-    print('You are murderer, kill all the people. Who is your first victim?')
-    variables.Roles = {
-      'inn2': 'Bob',
-      'inn1': 'Sarah',
-      'sheriff': 'Emily',
-      'inn3': 'Jack'
-    }
-    role = 3
-  ShowPlayers()
 
 
 def KillPlayer(index):  #убирает из списка игрока которого убили
@@ -50,7 +32,8 @@ def KillPlayer(index):  #убирает из списка игрока кото�
 
 
 def ShowPlayers():  #показывает список игроков
-  for i, j in variables.Roles:
+  print("People that still alive:")
+  for j in variables.Roles:
     print(j)
 
 
@@ -80,7 +63,7 @@ def EnterPlayers():
   stop = input('type stop to stop getting list of names')
   while stop != 'stop':
     for i in variables.Roles:
-      print(i)
+      variables.Roles[stop] = 0
 
 def Sheriff_win():
   win='Good job sheriff!'
