@@ -35,10 +35,10 @@ def SheriffActions():  #действия игрока в роли шерифа
         print("Your can not team up because somebody is dead")
 
 def BotSheriff():
-  instant_shot=random.rendint(1,2)
-  instant_person=random.rendint(1, 4)
-  bot_team=random.rendint(1,2)
-  bot_teamup=random.rendint(1,4)
+  instant_shot=random.randint(1,2)
+  instant_person=random.randint(1, 4)
+  bot_team=random.randint(1,2)
+  bot_teamup=random.randint(1,4)
   if instant_shot==1:
     if instant_person==1:
       print(variables.Replics['ms']) 

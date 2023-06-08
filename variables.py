@@ -1,9 +1,10 @@
+roles_to_choose = ["Innocent", "Sheriff", "Murderer"]
 Roles = {
-  'inn2': 'Bob',
-  'inn1': 'Sarah',
-  'sheriff': 'Emily',
-  'murd': 'Jack'
-}  # изненить на словарь, чтобы каждому имени соотвествовала его роль
+  'Bob': 0,
+  'Sarah': 1,
+  'Emily': 2,
+  'Jack': 3
+}
 Replics = {
   'lost': 'You lost',
   'sk': 'Successful kill',
