@@ -5,7 +5,8 @@ import variables
 def StartGame():  #вступление игры
   intro = 'welcome to murder mystery'
   print(f"{intro:^65}")
-  input('press any key to start')
+  key='press any key to start ..'
+  input(f"{key:^65}")
 
 def PlayerRole():
   global role
@@ -32,16 +33,18 @@ def KillPlayer(index):  #убирает из списка игрока кото�
 
 
 def ShowPlayers():  #показывает список игроков
-  print("People that still alive:")
+  still_alive='People that still alive:'
+  print(f"{still_alive:^65}")
   for j in variables.Roles:
-    print(j)
+    print(f"{j:^65}")
 
 
 def KillProcess(
   index
 ):  #прецесс убийства где и убирается из списка мертвый персонаж и выводится список игроков
   KillPlayer(index)
-  print('People left:')
+  pl='People left:'
+  print(f"{pl:^65}")
   ShowPlayers()
 
 

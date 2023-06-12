@@ -3,25 +3,30 @@ import game
 import random
 
 def SheriffActions():  #действия игрока в роли шерифа
-  shoot = input('Do you already want to shoot someone? Yes or no?')
+  shoot ='Do you already want to shoot someone? Yes or no?'
+  input(f"{shoot:^65}")
   if shoot.capitalize() == 'Yes':
     name_sher = input(
       'You think you know who is a musderer? Then shoot him. Type a name')
   game.ShowPlayers()
   while not game.IsPlayerInList(name_sher):
-    name_sher = input('You wrote invalid name, please try again')
+    name_sher = 'You wrote invalid name, please try again'
+    input(f"{name_sher:^65}")
     game.ShowPlayers()
   if game.IsPlayerInList(
         name_sher) and name_sher.capitalize() == variables.Roles['murd']:
-      print('she was murderer, good job. You win!')
-      game.Sheriff_win()
+          win='she was murderer, good job. You win!'
+          print(f"{win:^65}")
+          game.Sheriff_win()
   elif game.IsPlayerInList(
       name_sher) and name_sher.capitalize() != variables.Roles['murd']:
-    print('You shot an innocent, be more careful next time')
+    shot_inn='You shot an innocent, be more careful next time'
+    print(f"{shot_inn:^65}")
     print(variables.Replics['lost'])
   
   if shoot.capitalize == 'No':
-    question = input('Do you want to team up with anyone? Yes or no?')
+    question = 'Do you want to team up with anyone? Yes or no?'
+    input(f"{question:^65}")
   
   if question.capitalize == 'Yes':
     question2 = input('Who would u like to team up with?')
@@ -32,7 +37,8 @@ def SheriffActions():  #действия игрока в роли шерифа
       if variables.IsSmbDead != False:
         print("Your team up with", question2)
       else:
-        print("Your can not team up because somebody is dead")
+        smb_dead="Your can not team up because somebody is dead"
+        print(f"{smb_dead:^65}")
 
 def BotSheriff():
   instant_shot=random.randint(1,2)
@@ -47,13 +53,16 @@ def BotSheriff():
       print(variables.Replics['ms']) 
       variables.Roles.pop('inn1')
     elif instant_person==4:
-      print('You hear a shot, the game is over, sheriif has shot the murderer')
+      hear_shot='You hear a shot, the game is over, sheriif has shot the murderer'
+      print(f"{hear_shot:^65}")
       print('You win!')
     if game.PlayerRole()==3 and instant_person==3:
-      print('Sheriff shot you')
+      sh_you='Sheriff shot you'
+      print(f"{sh_you:^65}")
       print(variables.Replics['lost'])
     if game.PlayerRole()==1 and instant_person==3:
-      print('Sheriff shot you, but he made a mistake')
+      sh_you_m='Sheriff shot you, but he made a mistake'
+      print(f"{sh_you_m:^65}")
       print(game.Replics['lost'])
   if instant_shot==2:
     if bot_team==1:
@@ -64,4 +73,5 @@ def BotSheriff():
       if bot_teamup==3:
         pass
       if bot_teamup==4:
-        print('Sheriff wants to team up with you, do you want to team up with her?')
+        sh_team='Sheriff wants to team up with you, do you want to team up with her?'
+        print(f"{sh_team:^65}")

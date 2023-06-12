@@ -4,7 +4,8 @@ import game
 
 
 def MurdererActions():  # тут все дейтвия убийцы
-  name = input("Type name of your victim:")
+  name = "Type name of your victim:"
+  input(f"{name:^65}")
   if game.IsPlayerInList():
     if game.IsKillSuccessful():
       game.KillProcess(variables.Roles.index(name))
