@@ -9,8 +9,7 @@ def StartGame():  #вступление игры
   input(f"{key:^65}")
 
 def PlayerRole():
-  global role
-  role = random.randint(1,3)
+  variables.role = random.randint(1,3)
 
 def AddRoles():
   global Roles

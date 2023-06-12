@@ -18,6 +18,7 @@ def InitialGame():
 def Game():
   InitialGame()
   while True:
+    print(variables.role)
     if variables.role == 1:
       innocent.InnocentActions()
       murderer.BotMurdererActions()
