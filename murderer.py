@@ -18,9 +18,9 @@ def MurdererActions():  # тут все дейтвия убийцы
 def BotMurdererActions(
 ):  #действия убийцы, только убийца бот а у игрока другая роль
   global IsSmbDead
-  chance = random.randind(0, 1)
+  chance = random.randint(0, 1)
   if chance:
-    death = random.choice(variables.Roles)
+    death = random.choice(list(variables.Roles.keys()))
     variables.Roles.pop(death)
     IsSmbDead = True
   else:
