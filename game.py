@@ -64,7 +64,7 @@ def EnterPlayers():
   while stop != 'stop':
     variables.Roles[stop] = 0
     stop = input('type stop to stop getting list of names')
-
+    
 def Sheriff_win():
   win='Good job sheriff!'
   print(f"{win:^65}")

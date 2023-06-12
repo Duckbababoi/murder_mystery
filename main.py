@@ -12,7 +12,7 @@ def InitialGame():
   if variables.role == 2:
     variables.roles_to_choose.pop(2)
   elif variables.role == 3:
-    variables.roles_to_choose.pop(3)
+    variables.roles_to_choose.op(3)
   game.AddRoles()
 
 def Game():
@@ -20,9 +20,12 @@ def Game():
   while True:
     if variables.role == 1:
       innocent.InnocentActions()
+      murderer.BotMurdererActions()
+      sheriff.BotSheriff()
     elif variables.role == 2:
       murderer.BotMurdererActions()
       sheriff.SheriffActions()
     elif variables.role == 3:
       murderer.MurdererActions()
+      sheriff.BotSheriff()
 Game()
