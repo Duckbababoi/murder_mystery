@@ -44,12 +44,12 @@ def BotSheriff():
   instant_shot=random.randint(1,2)
   
   bot_team=random.randint(1,2)
-  bot_teamup=random.randint(1,4)
+  bot_teamup=random.randint(1,len(variables.Roles))
   if instant_shot==1:
     instant_person = random.choice(list(variables.Roles.keys()))
     variables.Roles.pop(instant_person)
     
-    if instant_person==variables.Roles('murd'):
+    if instant_person=='Murderer':
       hear_shot='You hear a shot, the game is over, sheriif has shot the murderer'
       print(f"{hear_shot:^65}")
       print('You win!')
@@ -63,12 +63,8 @@ def BotSheriff():
       print(game.Replics['lost'])
   if instant_shot==2:
     if bot_team==1:
-      if bot_teamup==1:
-        pass
-      if bot_teamup==2:
-        pass
-      if bot_teamup==3:
-        pass
-      if bot_teamup==4:
         sh_team='Sheriff wants to team up with you, do you want to team up with her?'
         print(f"{sh_team:^65}")
+    elif bot_team==2:
+      team_up=random.choice(list(variables.Roles.keys('Bob', 'Sarah', 'Emily', 'Jack')))
+      

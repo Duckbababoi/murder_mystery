@@ -3,7 +3,8 @@ Roles = {
   'Bob': 0,
   'Sarah': 1,
   'Emily': 2,
-  'Jack': 3
+  'Jack': 3,
+  'Me' : 4
 }
 Replics = {
   'lost': 'You lost',
