@@ -1,4 +1,4 @@
- import random
+import random
 import variables
 
 
@@ -68,6 +68,6 @@ def EnterPlayers():
     stop = input('type stop to stop getting list of names')
     
 def Sheriff_win():
-  win='Good job sheriff!'
+  win='The game is over, sheriif has shot the murderer!'
   print(f"{win:^65}")
   quit

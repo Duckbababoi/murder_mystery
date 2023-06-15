@@ -5,6 +5,9 @@ Roles = {
   'Emily': 2,
   'Jack': 3,
   'Me' : 4
+
+  
+
 }
 Replics = {
   'lost': 'You lost',
