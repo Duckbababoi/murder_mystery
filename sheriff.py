@@ -65,9 +65,14 @@ def BotSheriff():
       print(f"{sh_you_m:^65}")
       print(game.Replics['lost'])
   if instant_shot==2:
-    if bot_team==1:
+    team_up=random.choice(list(variables.Roles.keys()))
+    if team_up=='Me':
         sh_team='Sheriff wants to team up with you, do you want to team up with her?'
-        print(f"{sh_team:^65}")
-    elif bot_team==2:
-      team_up=random.choice(list(variables.Roles.keys('Bob', 'Sarah', 'Emily', 'Jack')))
+    else:
+      print(f"Looks like sheriff teamed up with {team_up}")
+        
+      
+    print(f"{sh_team:^65}")
+  elif bot_team==2:
+      
       
