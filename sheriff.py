@@ -67,7 +67,21 @@ def BotSheriff():
   if instant_shot==2:
     team_up=random.choice(list(variables.Roles.keys()))
     if team_up=='Me':
-        sh_team='Sheriff wants to team up with you, do you want to team up with her?'
+        sh_team='Sheriff wants to team up with you, do you want to team up with her? Yes or no? If you are murderer and you will team up with sheriff, you will instantly kill her.'
+        input(f"{sh_team:^65}")
+        if variables.role==1 and sh_team.capitalize()=='Yes':
+          rules='You teamed up with sheriff. Now if murderer kills you, sheriff will shoot him, if murderer kills sheriff you can pick up the gun and shoot the murderer, sheriff can`t shoot you'
+          print(f"{rules:^65}")
+        if variables.roles==3 and sh_team.capitalize()=='Yes':
+          kill_sher='You killed sheriff'
+          print(f"{kill_sher:^65}")
+          
+        
+          
+        
+          
+      
+        agree=input('Do you agree to team up, type Yes or No')
     else:
       print(f"Looks like sheriff teamed up with {team_up}")
         
