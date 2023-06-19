@@ -75,15 +75,11 @@ def BotSheriff():
         if variables.roles==3 and sh_team.capitalize()=='Yes':
           kill_sher='You killed sheriff'
           print(f"{kill_sher:^65}")
-          
-        
-          
-        
-          
-      
-        agree=input('Do you agree to team up, type Yes or No')
-    else:
-      print(f"Looks like sheriff teamed up with {team_up}")
+        else:
+          print(f"Looks like sheriff teamed up with {team_up}")
+          if variables.roles_to_choose=='Murderer':
+            dead_sher='You can`t see the sheriff anywhere, maybe something happened to him...'
+            print(f"{dead_sher:^65}")
         
       
     print(f"{sh_team:^65}")
