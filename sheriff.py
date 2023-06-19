@@ -83,6 +83,6 @@ def BotSheriff():
         
       
     print(f"{sh_team:^65}")
-  elif bot_team==2:
+  
       
       
