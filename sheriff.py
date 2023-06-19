@@ -81,5 +81,13 @@ def BotSheriff():
       if variables.Roles[team_up] == variables.roles_to_choose[0]:
         pass
       elif variables.Roles[team_up] == variables.roles_to_choose[2]:
-        pass
+        game.KillPlayer(variables.roles_to_choose[3])
+        
+        dead_sheriff='You can`t find the sheriff anywhere, maybe something happened to him...'
+        print(f"{dead_sheriff:^65}")
+        check='Do you want to find out what happened to the sheriff? Yes or no?'
+        if check.capitalize()=='Yes':
+          pass
+        if check.capitalize()=='No':
+          pass
 
