@@ -71,3 +71,8 @@ def Sheriff_win():
   win='The game is over, sheriif has shot the murderer!'
   print(f"{win:^65}")
   quit
+
+def TeamUpshoot(index):
+  Sheriff_win()
+  quit
+  

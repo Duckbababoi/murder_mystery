@@ -79,9 +79,11 @@ def BotSheriff():
         print(f"{kill_sher:^65}")
     else:
       if variables.Roles[team_up] == variables.roles_to_choose[0]:
-        pass
-      elif variables.Roles[team_up] == variables.roles_to_choose[2]:
-        game.KillPlayer(variables.roles_to_choose[3])
+        if variables.Roles[team_up]==murderer.BotMurdererActions():
+          game.TeamUpshoot(variables.roles_to_choose[3])
+          
+      elif variables.Roles[team_up] == variables.roles_to_choose[3]:
+        game.KillPlayer(variables.roles_to_choose[2])
         
         dead_sheriff='You can`t find the sheriff anywhere, maybe something happened to him...'
         print(f"{dead_sheriff:^65}")
