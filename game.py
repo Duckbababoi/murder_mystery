@@ -5,11 +5,13 @@ import variables
 def StartGame():  #вступление игры
   intro = 'welcome to murder mystery'
   print(f"{intro:^65}")
-  key='press any key to start ..'
+  key = 'press any key to start ..'
   input(f"{key:^65}")
 
+
 def PlayerRole():
-  variables.role = random.randint(1,3)
+  variables.role = random.randint(1, 3)
+
 
 def AddRoles():
   global Roles
@@ -26,13 +28,12 @@ def GenerateRole():
   return role
 
 
-
 def KillPlayer(index):  #убирает из списка игрока которого убили
   variables.Roles.pop(index)
 
 
 def ShowPlayers():  #показывает список игроков
-  still_alive='People that still alive:'
+  still_alive = 'People that still alive:'
   print(f"{still_alive:^65}")
   for j in variables.Roles:
     print(f"{j:^65}")
@@ -42,7 +43,7 @@ def KillProcess(
   index
 ):  #прецесс убийства где и убирается из списка мертвый персонаж и выводится список игроков
   KillPlayer(index)
-  pl='People left:'
+  pl = 'People left:'
   print(f"{pl:^65}")
   ShowPlayers()
 
@@ -62,13 +63,13 @@ def IsPlayerInList(name):  #проверка если есть такой игр
 
 
 def EnterPlayers():
-  stop = input('type stop to stop getting list of names')
+  stop = input('\n\n\n\nType stop to stop adding new player or just a name:')
   while stop != 'stop':
     variables.Roles[stop] = 0
-    stop = input('type stop to stop getting list of names')
-    
+    stop = input('Type stop to stop adding new player or just a name:')
+
+
 def Sheriff_win():
-  win='The game is over, sheriif has shot the murderer!'
+  win = 'The game is over, sheriif has shot the murderer!'
   print(f"{win:^65}")
   quit
-

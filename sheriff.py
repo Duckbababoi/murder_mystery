@@ -6,41 +6,39 @@ import murderer
 
 def SheriffActions():  #действия игрока в роли шерифа
   shoot = 'Do you already want to shoot someone? Yes or no?'
-  input(f"{shoot:^65}")
+  shoot = input(f"{shoot:^65}")
   if shoot.capitalize() == 'Yes':
+    game.ShowPlayers()
     name_sher = input(
       'You think you know who is a musderer? Then shoot him. Type a name')
-  game.ShowPlayers()
-  while not game.IsPlayerInList(name_sher):
-    name_sher = 'You wrote invalid name, please try again'
-    input(f"{name_sher:^65}")
-    game.ShowPlayers()
-  if game.IsPlayerInList(
-      name_sher) and name_sher.capitalize() == variables.Roles['murd']:
-    win = 'she was murderer, good job. You win!'
-    print(f"{win:^65}")
-    game.Sheriff_win()
-  elif game.IsPlayerInList(
-      name_sher) and name_sher.capitalize() != variables.Roles['murd']:
-    shot_inn = 'You shot an innocent, be more careful next time'
-    print(f"{shot_inn:^65}")
-    print(variables.Replics['lost'])
+    while not game.IsPlayerInList(name_sher):
+      game.ShowPlayers()
+      name_sher = 'You wrote invalid name, please try again'
+      input(f"{name_sher:^65}")
+    if game.IsPlayerInList(name_sher) and variables.Roles[
+        name_sher.capitalize()] == variables.roles_to_choose[2]:
+      win = 'she was murderer, good job. You win!'
+      print(f"{win:^65}")
+      game.Sheriff_win()
+    elif game.IsPlayerInList(name_sher) and variables.Roles[
+        name_sher.capitalize()] != variables.roles_to_choose[2]:
+      shot_inn = 'You shot an innocent, be more careful next time'
+      print(f"{shot_inn:^65}")
+      print(variables.Replics['lost'])
 
-  if shoot.capitalize == 'No':
+  if shoot.capitalize() == 'No':
     question = 'Do you want to team up with anyone? Yes or no?'
-    input(f"{question:^65}")
+    question = input(f"{question:^65}")
 
-  if question.capitalize == 'Yes':
-    question2 = input('Who would u like to team up with?')
-    game.ShowPlayers()
-
-  def TeamUp():
-    if game.IsPlayerInList(question2):
-      if variables.IsSmbDead != False:
-        print("Your team up with", question2)
-      else:
-        smb_dead = "Your can not team up because somebody is dead"
-        print(f"{smb_dead:^65}")
+    if question.capitalize() == 'Yes':
+      game.ShowPlayers()
+      question2 = input('Who would u like to team up with?')
+      if game.IsPlayerInList(question2.capitalize()):
+        if variables.IsSmbDead != False:
+          print("Your team up with", question2.capitalize())
+        else:
+          smb_dead = "Your can not team up because somebody is dead"
+          print(f"{smb_dead:^65}")
 
 
 def BotSheriff():
@@ -80,18 +78,28 @@ def BotSheriff():
         print(f"{kill_sher:^65}")
     else:
       if variables.Roles[team_up] == variables.roles_to_choose[0]:
-        if variables.Roles[team_up]==murderer.death:
-          print('Murderer was shot, sheriff won!')
-          quit
-          
-      elif variables.Roles[team_up] == variables.roles_to_choose[3]:
-        game.KillPlayer(variables.roles_to_choose[2])
-        
-        dead_sheriff='You can`t find the sheriff anywhere, maybe something happened to him...'
-        print(f"{dead_sheriff:^65}")
-        check='Do you want to find out what happened to the sheriff? Yes or no?'
-        if check.capitalize()=='Yes':
-          pass
-        if check.capitalize()=='No':
-          pass
+        global sheriff_team_up
+        if random.randint(0, 1) == 1 and not variables.IsSmbDead:
+          variables.sheriff_team_up = team_up
+          print('Sheriff has team up with somebody')
+        else:
+          variables.sheriff_team_up = 0
+          print('Sheriff hasn\'t team up with somebody')
 
+      elif variables.Roles[team_up] == variables.roles_to_choose[2]:
+        for i, j in variables.Roles:
+          if j == variables.roles_to_choose[1]:
+            global IsSmbDead
+            global death
+            variables.death = i
+            variables.IsSmbDead = True
+            game.KillPlayer(i)
+
+        dead_sheriff = 'You can`t find the sheriff anywhere, maybe something happened to him...'
+        print(f"{dead_sheriff:^65}")
+        check = input(
+          'Do you want to find out what happened to the sheriff? Yes or no?')
+        if check.capitalize() == 'Yes':
+          pass
+        if check.capitalize() == 'No':
+          pass
