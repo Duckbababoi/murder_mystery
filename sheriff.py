@@ -1,6 +1,7 @@
 import variables
 import game
 import random
+import murderer
 
 
 def SheriffActions():  #действия игрока в роли шерифа
@@ -79,8 +80,9 @@ def BotSheriff():
         print(f"{kill_sher:^65}")
     else:
       if variables.Roles[team_up] == variables.roles_to_choose[0]:
-        if variables.Roles[team_up]==murderer.BotMurdererActions():
-          game.TeamUpshoot(variables.roles_to_choose[3])
+        if variables.Roles[team_up]==murderer.death:
+          print('Murderer was shot, sheriff won!')
+          quit
           
       elif variables.Roles[team_up] == variables.roles_to_choose[3]:
         game.KillPlayer(variables.roles_to_choose[2])

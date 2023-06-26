@@ -72,7 +72,3 @@ def Sheriff_win():
   print(f"{win:^65}")
   quit
 
-def TeamUpshoot(index):
-  Sheriff_win()
-  quit
-  
