@@ -25,6 +25,7 @@ def SheriffActions():  #действия игрока в роли шерифа
       shot_inn = 'You shot an innocent, be more careful next time'
       print(f"{shot_inn:^65}")
       print(variables.Replics['lost'])
+      quit
 
   if shoot.capitalize() == 'No':
     question = 'Do you want to team up with anyone? Yes or no?'
