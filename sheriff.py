@@ -104,15 +104,14 @@ def BotSheriff():
           WhereisSheriff=random.choice(list(variables.Rooms.keys()))
           what_room=input('What room would you like to check? Office, kitchen, bedroom, living room or garden? Type the name oof the room')
          while what_room.capitalize()!=WhereisSheriff:
-           another_room=input('You didnt find  sheriff in this room, type anothor room you want to check')
+           what_room=input('You didnt find  sheriff in this room, type anothor room you want to check')
            
-            found_gun=input('You found the sheriff, he is dead, do you want to pick up the gun? Yes or No')
+          found_gun=input('You found the sheriff, he is dead, do you want to pick up the gun? Yes or No')
             if found_gun.capitalize()=='Yes':
               pass
             if found_gun.capitalize()=='No':
               pass
-          else:
-            another_room=
+          
         if check.capitalize() == 'No':
           hide=input('You hear someone walking nearby, what if it is a murderer? It will be better to hide, would you like to hide here, or run in another room? If you want to hide here type Hide if you want to run in another room type Run')
           if hide.capitalize()== 'Hide':
