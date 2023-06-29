@@ -1,5 +1,6 @@
 roles_to_choose = ["Innocent", "Sheriff", "Murderer"]
 Roles = {'Bob': 0, 'Sarah': 1, 'Emily': 2, 'Jack': 3, 'Me': 4}
+Rooms = {'Office':0, 'Kitchen':1, 'Bedroom':2, 'Living room':3, 'Garden':4}
 Replics = {
   'lost': 'You lost',
   'sk': 'Successful kill',
