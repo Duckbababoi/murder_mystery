@@ -10,7 +10,7 @@ def SheriffActions():  #действия игрока в роли шерифа
   if shoot.capitalize() == 'Yes':
     game.ShowPlayers()
     name_sher = input(
-      'You think you know who is a musderer? Then shoot him. Type a name')
+      'You think you know who is a murderer? Then shoot him. Type a name')
     while not game.IsPlayerInList(name_sher):
       game.ShowPlayers()
       name_sher = 'You wrote invalid name, please try again'
@@ -124,7 +124,15 @@ def BotSheriff():
             got_found=random.randint(1,2)
             print('Murderer entered the room, now you only have to pray he wont find you')
             if got_found==1:
-              print('Murderer found you and killed you, ypu lost. ')
+              print('Murderer found you and killed you, you lost. ')
               quit
+            if got_found==2:
+              print('Luckily murderer didn`t find you, but it`s not the end yet... ')
           if hide.capitalize()=='Run':
-            pass
+            die_chance=random.randint(1,3)
+            print('You are going to another room, be quiet, murderer can hear you ')
+            if die_chance==3:
+              print('Murderer heard you and killed you, you lost')
+              quit
+            else:
+              print('You successfully went to another room')
