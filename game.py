@@ -1,6 +1,8 @@
 import random
 import variables
-
+import sheriff
+import murderer
+import innocent
 
 def StartGame():  #вступление игры
   intro = 'welcome to murder mystery'
@@ -10,7 +12,7 @@ def StartGame():  #вступление игры
 
 
 def PlayerRole():
-  variables.role = random.randint(1, 3)
+  variables.role = 2
 
 
 def AddRoles():
@@ -69,7 +71,13 @@ def EnterPlayers():
     stop = input('Type stop to stop adding new player or just a name:')
 
 
-def Sheriff_win():
-  win = 'The game is over, sheriif has shot the murderer!'
-  print(f"{win:^65}")
-  quit
+def WhoWon():
+  if variables.roles_to_choose[2] in variables.Roles:
+    if  len(variables.Roles)<=2:
+      print('Murderer won')
+      return True
+    return False
+  else:
+    print('Sheriff and innocents won!')
+    return True
+  

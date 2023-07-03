@@ -36,6 +36,7 @@ def Game():
       print("Your role is Murderer")
       murderer.MurdererActions()
       sheriff.BotSheriff()
-
+    if game.WhoWon():
+        return
 
 Game()

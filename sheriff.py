@@ -14,7 +14,7 @@ def SheriffActions():  #действия игрока в роли шерифа
     while not game.IsPlayerInList(name_sher):
       game.ShowPlayers()
       name_sher = 'You wrote invalid name, please try again'
-      input(f"{name_sher:^65}")
+      name_sher=input(f"{name_sher:^65}")
     if game.IsPlayerInList(name_sher) and variables.Roles[
         name_sher.capitalize()] == variables.roles_to_choose[2]:
       win = 'she was murderer, good job. You win!'
