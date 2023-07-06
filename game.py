@@ -72,7 +72,7 @@ def EnterPlayers():
 
 
 def WhoWon():
-  if variables.roles_to_choose[2] in variables.Roles:
+  if variables.roles_to_choose[2] in variables.Roles.values():
     if  len(variables.Roles)<=2:
       print('Murderer won')
       return True

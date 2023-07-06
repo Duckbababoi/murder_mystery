@@ -26,16 +26,16 @@ def Game():
     if variables.role == 1:
       print("Your role is Innocent, you have 3 speed boosts to run from the murderer")
       innocent.InnocentActions()
-      murderer.BotMurdererActions()
       sheriff.BotSheriff()
+      murderer.BotMurdererActions()
     elif variables.role == 2:
       print("Your role is Sheriff, you have to shoot the murderer")
-      murderer.BotMurdererActions()
       sheriff.SheriffActions()
+      murderer.BotMurdererActions()
     elif variables.role == 3:
       print("Your role is Murderer, kill everyone in the house")
-      murderer.MurdererActions()
       sheriff.BotSheriff()
+      murderer.MurdererActions()
     if game.WhoWon():
         return
 
