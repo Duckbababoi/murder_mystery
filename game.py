@@ -65,7 +65,7 @@ def IsPlayerInList(name):  #проверка если есть такой игр
 
 
 def EnterPlayers():
-  stop = input('\n\n\n\nType stop to stop adding new player or just a name:')
+  stop = input('Type stop to stop adding new player or just a name:')
   while stop != 'stop':
     variables.Roles[stop] = 0
     stop = input('Type stop to stop adding new player or just a name:')
@@ -80,4 +80,10 @@ def WhoWon():
   else:
     print('Sheriff and innocents won!')
     return True
-  
+
+def IsSheriffAlive():
+  for i in variables.Roles:
+    if variables.roles_to_choose[1] in i:
+      return True
+    else:
+      return False
