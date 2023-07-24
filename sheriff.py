@@ -85,7 +85,7 @@ def BotSheriff():
           print('Sheriff has team up with somebody')
         else:
           variables.sheriff_team_up = 0
-          print('Sheriff hasn\'t team up with somebody')
+          print('Sheriff hasn\'t team up with anybody')
 
       elif variables.Roles[team_up] == variables.roles_to_choose[2]:
         for i, j in variables.Roles:

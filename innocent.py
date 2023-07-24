@@ -17,18 +17,19 @@ def InnocentActions():  #действияя игрока в роли невин�
       if victim==1:
         gun=input('You walk around and you find a dead sheriff would you like to pick up a gun? Yes or no?')
         if gun.capitalize()=='Yes':
-          print('Now you can shoot a muderer when ')
+          print('Now you can shoot a muderer when you see him but your speed boosts are no longer working')
+          boost=0
         if gun.capitalize()=='No':
-          pass
+          print('Well, looks like wyou don`t want to risk')
       else:
         print('You found a dead innocent, you need to investigate who is the murderer')
     else: 
       boost_question1=input('Murderer saw you, would you like to use your speed boost? Yes or No? If you won`t use it, murderer will kill you ')
       if boost_question1.capitalize()=='Yes':
         boost-=1
-        question=input('You ran away from the murderer, now you have one boost less but the most important is that you are still alive. Would you like to hide somewhere (Type Hide) or go to other rooms to find other guests (Type Search)?')
+        question=input(f"You ran away from the murderer, now you have one boost less but the most important is that you are still alive. And you also know that the murderer is {} Would you like to hide somewhere (Type Hide) or go to other rooms to find other guests (Type Search)?")
         if question.capitalize()=='Hide':
-          pass
+          print('You hid in the bedroom')
         if question.capitalize()=='Search':
           pass
         
