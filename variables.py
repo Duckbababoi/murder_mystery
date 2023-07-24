@@ -19,3 +19,6 @@ role = 0
 IsSmbDead = False
 death = 0
 sheriff_team_up = 0
+
+instant_person = random.choice(list(variables.Roles.keys()))
+instant_person_role = variables.Roles[instant_person]

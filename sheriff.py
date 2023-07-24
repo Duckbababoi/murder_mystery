@@ -50,8 +50,8 @@ def BotSheriff():
   bot_teamup = random.randint(1, len(variables.Roles))
 
   if instant_shot == 1:
-    instant_person = random.choice(list(variables.Roles.keys()))
-    instant_person_role = variables.Roles[instant_person]
+    variables.instant_person = random.choice(list(variables.Roles.keys()))
+    variables.instant_person_role = variables.Roles[instant_person]
     variables.Roles.pop(instant_person)
 
     if instant_person_role == variables.roles_to_choose[2]:

@@ -89,8 +89,8 @@ def IsSheriffAlive():
       return False
 
 def SherBotForInn():
-  sheriff.instant_person = random.choice(list(variables.Roles.keys()))
-    sheriff.instant_person_role = variables.Roles[instant_person]
+  variables.instant_person = random.choice(list(variables.Roles.keys()))
+    variables.instant_person_role = variables.Roles[instant_person]
     variables.Roles.pop(instant_person)
 
   if instant_person_role == variables.roles_to_choose[2]:
@@ -121,7 +121,7 @@ def SherBotForInn():
         print('Sheriff has team up with somebody')
       else:
         variables.sheriff_team_up = 0
-        print('Sheriff hasn't team up with anybody')
+        print('Sheriff hasn`t teamed up with anybody')
     elif variables.Roles[team_up] == variables.roles_to_choose[2]:
       for i, j in variables.Roles:
         if j == variables.roles_to_choose[1]:
