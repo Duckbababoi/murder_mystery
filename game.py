@@ -197,7 +197,7 @@ def SherBotForMurd():
           print('Sheriff has team up with somebody')
         else:
           variables.sheriff_team_up = 0
-          print('Sheriff hasn't team up with anybody')
+          print('Sheriff hasn`t team up with anybody')
       elif variables.Roles[team_up] == variables.roles_to_choose[2]:
         for i, j in variables.Roles:
           if j == variables.roles_to_choose[1]:
@@ -206,4 +206,8 @@ def SherBotForMurd():
             variables.death = i
             variables.IsSmbDead = True
             game.KillPlayer(i)
+
+def FindMurd():
+  for i in variables.Roles:
+    return variables.roles_to_choose[2]
           
