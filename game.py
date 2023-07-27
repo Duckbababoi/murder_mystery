@@ -207,7 +207,17 @@ def SherBotForMurd():
             variables.IsSmbDead = True
             game.KillPlayer(i)
 
-def FindMurd():
-  for i in variables.Roles:
-    return variables.roles_to_choose[2]
+def find_key_by_value(dictionary, value_to_find):
+
+    for key, value in dictionary.items():
+
+        if value == value_to_find:
+
+            return key
+
+    return None
+
+ 
+
+ 
           

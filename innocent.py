@@ -38,7 +38,7 @@ def InnocentActions():  #действияя игрока в роли невин�
       boost_question1=input('Murderer saw you, would you like to use your speed boost? Yes or No? If you won`t use it, murderer will kill you ')
       if boost_question1.capitalize()=='Yes':
         boost-=1
-        question=input(f"You ran away from the murderer, now you have one boost less but the most important is that you are still alive. And you also know that the murderer is {} Would you like to hide somewhere (Type Hide) or go to other rooms to find other guests (Type Search)?")
+        question=input(f"You ran away from the murderer, now you have one boost less but the most important is that you are still alive. And you also know that the murderer is {game.find_key_by_value(variables.Roles, variables.roles_to_choose[2])} Would you like to hide somewhere (Type Hide) or go to other rooms to find other guests (Type Search)?")
         if question.capitalize()=='Hide':
           person=random.randint(1,4)
           which_person=random.choice(variables.Roles)
