@@ -85,13 +85,14 @@ def IsSheriffAlive():
   for i in variables.Roles:
     if variables.roles_to_choose[1] in i:
       return True
+      
     else:
       return False
 
 def SherBotForInn():
   variables.instant_person = random.choice(list(variables.Roles.keys()))
-    variables.instant_person_role = variables.Roles[instant_person]
-    variables.Roles.pop(instant_person)
+  variables.instant_person_role = variables.Roles[instant_person]
+  variables.Roles.pop(instant_person)
 
   if instant_person_role == variables.roles_to_choose[2]:
       game.Sheriff_win()

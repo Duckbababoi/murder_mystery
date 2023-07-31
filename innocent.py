@@ -14,8 +14,8 @@ def InnocentActions():  #действияя игрока в роли невин�
     
     if killed==1:
       print('Looks like someone from the guests decided to kill everyone')
-      if victim==1:
-        gun=input('You walk around and you find a dead sheriff would you like to pick up a gun? Yes or no?')
+      game.IsSheriffAlive()
+      
         if gun.capitalize()=='Yes':
           print('Now you can shoot a muderer when you see him but your speed boosts are no longer working')
           boost=0
@@ -41,14 +41,21 @@ def InnocentActions():  #действияя игрока в роли невин�
         question=input(f"You ran away from the murderer, now you have one boost less but the most important is that you are still alive. And you also know that the murderer is {game.find_key_by_value(variables.Roles, variables.roles_to_choose[2])} Would you like to hide somewhere (Type Hide) or go to other rooms to find other guests (Type Search)?")
         if question.capitalize()=='Hide':
           person=random.randint(1,4)
-          which_person=random.choice(variables.Roles)
+          
           print('You hid in the bedroom')
           if person==1:
+            which_person=random.choice(variables.Roles)
+            while which_person=='Me':
+              which_person=random.choice(variables.Roles)
+              game.IsSheriffAlive()
+            print(f"You found {which_person} here you quietly ask {which_person} if he is the sheriff")
+            
+              
             
         if question.capitalize()=='Search':
           pass
         
-      if boost_question1.capitalize()=='No':
+    
         print('Murderer caught you and killed you, you lost')
         
       
